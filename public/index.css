@@ -1,0 +1,191 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* main page background */
+#main-page {
+    background-image: url(https://res.cloudinary.com/dik0ai1v8/image/upload/v1684317269/Default-velocity-cuisine-images/mainpage_suueoe.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+ /* buttons of navbar  */
+ .navbar-brand{
+    text-transform: capitalize;
+    font-size: large;
+    font-weight: bold;
+    color: aliceblue !important;
+}
+
+#home,#place-orders,#your-orders,#about-us{
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    transition: all 0.5s ease-in-out;
+}
+#home:hover{
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+#place-orders:hover{
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+#your-orders:hover{
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+#about-us:hover{
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.sign-up,.sign-in {
+    text-decoration: none;
+    color: white;
+    font-size: large;
+    font-weight: 600;
+}
+.sign-in:hover {
+    color: aliceblue;
+}
+.sign-up:hover {
+    color: aliceblue;
+}
+
+
+
+/* cards  */
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-image: linear-gradient(#fdfbfb , #ebedee);
+    height: 430px;
+    width: 100%;
+}
+
+.card {
+    transition: all 0.5s ease-in-out;
+    margin: 20px;
+       box-shadow: 0px 0px 0px grey;
+        -webkit-transition:  box-shadow .3s ease-out;
+           box-shadow: .8px .9px 3px grey;
+}
+.card:hover{ 
+    box-shadow: 1px 8px 20px grey;
+ }
+
+/* company moto title  */
+
+.company-moto {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 50vw;
+    margin: 28vh 0vh 0vh 6vw;
+}
+
+.title-moto {
+    color: aliceblue;
+    text-transform: capitalize;
+    font-family: cursive;
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 3vh;
+}
+.description-moto {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+    font-weight: 400;
+    font-size: large;
+}
+/* span  */
+.velocity-cuisine {
+    text-transform: capitalize;
+    color: cyan;
+}
+
+.add-rest-button {
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    margin-top: 15px;
+    background-color: aliceblue;
+    padding: 10px;
+    width: 15vw;
+    transition: all 0.3s ease-in-out;
+}
+.add-rest-button:hover {
+    background-color: green;
+    color: aliceblue;
+    box-shadow: 4px 10px 20px rgb(50, 91, 52);
+}
+
+
+
+/* footer  */
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50vh;
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+}
+
+.footer-image {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16vh;
+    margin-left: 9vw;
+}
+
+.footer-logo {
+    color: aliceblue;
+    margin-left: 15px;
+    text-transform: capitalize;
+}
+
+.footer-desc {
+    display: flex;
+    flex-direction: row;
+    margin-top: 7vh;
+    margin-left: 25vw;
+}
+
+.company {
+    display: flex;
+    flex-direction: column;
+}
+.company-title {
+    margin-bottom: 20px;
+    color: green;
+    text-transform: capitalize;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10vw;
+}
+.categories-title {
+    margin-bottom: 20px;
+    color: green;
+    text-transform: capitalize;
+}
+
+.footer-a-tag {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: aliceblue;
+}
+.footer-a-tag:hover {
+    color: green;
+}
