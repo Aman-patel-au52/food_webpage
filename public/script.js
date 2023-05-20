@@ -10,13 +10,14 @@ async function onClickLogin() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  }).then((response) => response.json());
-  
+  })
+  const jsondata = response.json();
+  // .then((response) => response.json());
 
-  if (response?.status) {
+  if (jsondata?.status) {
     window.location = "/index.html";
   } else {
-    const errorMessage = response?.message;
+    const errorMessage = jsondata?.message;
     const errorTag = document.getElementById("login-error");
     errorTag.innerText = errorMessage;
     errorTag.style.display = "inline";
@@ -38,8 +39,10 @@ async function onclicksignup() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ firstname , lastname , email, password  }),
-  }).then((response) => response.json());
+  });
+  const jsondata = response.json();
 
+  // .then((response) => response.json());
   if(password !== confirmPassword){
     const errorMessage = response?.message;
     const errorTag = document.getElementById("password-error");
@@ -47,10 +50,10 @@ async function onclicksignup() {
     errorTag.style.display = "inline";
   }
 
-  if (response?.status) {
+  if (jsondata?.status) {
     window.location = "/index.html";
   } else {
-    const errorMessage = response?.message;
+    const errorMessage = jsondata?.message;
     const errorTag = document.getElementById("signup-error");
     errorTag.innerText = errorMessage;
     errorTag.style.display = "inline";
