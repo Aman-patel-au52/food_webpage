@@ -1,3 +1,5 @@
+
+// signin
 async function onClickLogin() {
   const email = document.getElementById("login-email").value;
   const password = document.getElementById("login-password").value;
@@ -9,6 +11,7 @@ async function onClickLogin() {
     },
     body: JSON.stringify({ email, password }),
   }).then((response) => response.json());
+  
 
   if (response?.status) {
     window.location = "/index.html";
@@ -20,6 +23,42 @@ async function onClickLogin() {
   }
 }
 
+
+// signup
+async function onclicksignup() {
+  const firstname = document.getElementById("firstname").value;
+  const lastname = document.getElementById("lastname").value;
+  const email = document.getElementById("signup-email").value;
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  const response = await fetch("/user/sign-up", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ firstname , lastname , email, password  }),
+  }).then((response) => response.json());
+
+  if(password !== confirmPassword){
+    const errorMessage = response?.message;
+    const errorTag = document.getElementById("password-error");
+    errorTag.innerText = errorMessage;
+    errorTag.style.display = "inline";
+  }
+
+  if (response?.status) {
+    window.location = "/index.html";
+  } else {
+    const errorMessage = response?.message;
+    const errorTag = document.getElementById("signup-error");
+    errorTag.innerText = errorMessage;
+    errorTag.style.display = "inline";
+  }
+}
+
+
+// products
 async function showProducts() {
   const response = await fetch("/product/list/10/1", {
     method: "GET",

@@ -29,8 +29,9 @@ app.get("/test", async (req, res) => {
 app.post("/user/login", async (req, res) => {
   const { email, password } = req.body;
   try {
+    // console.log(typeof firstName)
     const userData = await users.findOne({
-      email,
+      email
     });
 
     if (!userData) {
@@ -59,6 +60,7 @@ app.post("/user/login", async (req, res) => {
 app.post("/user/sign-up", async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
   try {
+    // console.log(typeof firstName)
     const userId = uuidv4();
     const isAlreadyRegistered = await users.findOne({ email });
     if (isAlreadyRegistered) {
