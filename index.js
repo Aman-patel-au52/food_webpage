@@ -72,6 +72,7 @@ app.post("/order/create", async (req, res) => {
 // Products APIs
 app.get("/product/:id", async (req, res) => {});
 
+
 app.get("/product/list/:limit/:offset", async (req, res) => {
   let { limit, offset } = req.params;
   offset = (offset - 1) * limit;
