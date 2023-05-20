@@ -10,12 +10,12 @@ initDb();
 
 app.use(express.static("public"));
 
-const Users = require("./models/users");
-const Products = require("./models/products");
-const Orders = require("./models/orders");
+const users = require("./models/users");
+const products = require("./models/products");
+const orders = require("./models/orders");
 
 app.get("/test", async (req, res) => {
-  const data = await Users.find({});
+  const data = await users.find({});
 
   return res.send({
     message: "Response",
@@ -30,7 +30,7 @@ const  {firstName,lastName, email, password } = req.body;
 // console.log('firstName,lastName, email, password ', firstName,lastName, email, password )
 
 try{
-  const result = await Users.create({ firstName,lastName, email, password });
+  const result = await users.create({ firstName,lastName, email, password });
   res.send({status: 'success', msg : 'user login successfully'});
 
 }catch (error){
@@ -44,7 +44,7 @@ app.post("/user/sign-up", async (req, res) => {
 
   const  {firstName,lastName, email, password } = req.body;
 try{
-   const result = await Users.create({ firstName,lastName, email, password });
+   const result = await users.create({ firstName,lastName, email, password });
   res.send({status: 'success', msg : 'user signed-up successfully'});
 
 }catch (error){
@@ -55,6 +55,10 @@ try{
 
 // Orders APIs
 app.get("/order/:id", async (req, res) => {});
+
+
+
+
 
 app.get("/order/list/:limit/:offset", async (req, res) => {});
 
@@ -68,7 +72,7 @@ app.get("/product/list/:limit/:offset", async (req, res) => {
   let { limit, offset } = req.params;
   offset = (offset - 1) * limit;
 
-  const data = await Products.find({}).skip(offset).limit(limit);
+  const data = await products.find({}).skip(offset).limit(limit);
 
   return res.send({
     message: "Response",
