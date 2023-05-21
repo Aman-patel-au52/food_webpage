@@ -53,8 +53,9 @@ app.post("/user/login", async (req, res) => {
     const message = error?.message || "Error while login";
     const statusCode = error?.statusCode || 400;
     res.status(statusCode).send({ message, status: false });
-  }
+}
 });
+
 
 app.post("/user/sign-up", async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
@@ -77,7 +78,7 @@ app.post("/user/sign-up", async (req, res) => {
     const message = error?.message || "Error while sign-up";
     const statusCode = error?.statusCode || 400;
     res.status(statusCode).send({ message, status: false });
-  }
+}
 });
 
 // Orders APIs
@@ -108,6 +109,7 @@ app.post("/order/create", async (req, res) => {
 
 // Products APIs
 app.get("/product/:id", async (req, res) => {});
+
 
 app.get("/product/list/:limit/:offset", async (req, res) => {
   let { limit, offset } = req.params;
