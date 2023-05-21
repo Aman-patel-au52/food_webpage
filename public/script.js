@@ -10,14 +10,14 @@ async function onClickLogin() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  })
-  const jsondata = response.json();
-  // .then((response) => response.json());
+  }).then((response) => response.json());
 
-  if (jsondata?.status) {
+  // const jsonResponse = await response.json();
+
+  if (jsonResponse?.status) {
     window.location = "/index.html";
   } else {
-    const errorMessage = jsondata?.message;
+    const errorMessage = jsonResponse?.message;
     const errorTag = document.getElementById("login-error");
     errorTag.innerText = errorMessage;
     errorTag.style.display = "inline";
