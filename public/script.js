@@ -10,9 +10,9 @@ async function onClickLogin() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  }).then((response) => response.json());
-
-  // const jsonResponse = await response.json();
+  })
+  // .then((response) => response.json());
+  const jsonResponse = await response.json();
 
   if (jsonResponse?.status) {
     window.location = "/index.html";
