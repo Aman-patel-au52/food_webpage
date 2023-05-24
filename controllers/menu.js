@@ -81,7 +81,7 @@ const ordercreate = async (req, res) => {
 const orderId = async (req, res) => {
     const { orderId, userId } = req.params;
     try {
-      const data = await orders.findById(userId);
+      const data = await orders.findOne({userId});
       console.log(data);
       res.send({ status: "success", msg: data });
     } catch (error) {
@@ -114,9 +114,9 @@ const productcreate = async (req, res) => {
 
 // product id
 const productId = async (req, res) => {
-    const { productId , userId } = req.params;
+    const { productId } = req.params;
     try {
-      const product_dataId = await products.findById(userId);
+      const product_dataId = await products.findOne({productId});
       res.send({status : 'success' , product_dataId});
     } catch (error) {
       res.send({status : 'error' , msg : 'error finding the product' , error});

@@ -86,8 +86,8 @@ async function showProducts() {
         `;
     }
 
-    const parentDiv = document.getElementById("cards");
-    parentDiv.innerHTML = htmlTags;
+    // const parentDiv = document.getElementById("cards");
+    // parentDiv.innerHTML = htmlTags;
   }
 }
 
