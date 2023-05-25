@@ -6,7 +6,7 @@ const orderSchema = new Schema({
   totalItem: Number,
   productId: String,
   userId: String,
-  orderId: String,
+  orderId: String
 });
 
 module.exports = mongoose.model("order", orderSchema);
