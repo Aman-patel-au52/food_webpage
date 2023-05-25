@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const { v4: uuidv4 } = require("uuid");
+const jwt = require ("jsonwebtoken");
 
 const app = express();
 app.use(express.json());
@@ -10,11 +11,9 @@ initDb();
 
 app.use(express.static("public"));
 
-const users = require("./models/users");
-const products = require("./models/products");
-const orders = require("./models/orders");
+const menuorder = require("./routes/menuroutes");
 
-const { hashPassword, comparePassword } = require("./utils");
+app.use('/', menuorder);
 
 app.get("/test", async (req, res) => {
   const data = await users.find({});
@@ -92,7 +91,16 @@ app.get("/order/:id", async (req, res) => {
   }
 });
 
-app.get("/order/list/:limit/:offset", async (req, res) => {});
+app.get("/order/:id", async (req, res) => {
+  const { orderId, userId } = req.params;
+  try {
+    const data = await orders.findById(userId);
+    console.log(data);
+    res.send({ status: "success", msg: data });
+  } catch (error) {
+    res.status(400).send({ status: "error", msg: "error getting the id" });
+  }
+});
 
 app.post("/order/create", async (req, res) => {
   const user_order = req.body;
@@ -107,7 +115,29 @@ app.post("/order/create", async (req, res) => {
 });
 
 // Products APIs
-app.get("/product/:id", async (req, res) => {});
+app.post("/product/create", async (req, res) => {
+  const product_details = req.body;
+  try {
+    const product_data = await products.create(product_details );
+    res.send({
+      status: success,
+      msg: "Product added successfully",
+      product_data,
+    });
+  } catch (error) {
+    res.send({ status: "error", msg: error });
+  }
+});
+
+app.get("/product/:id", async (req, res) => {
+  const { productId, userId } = req.params;
+  try {
+    const product_dataId = await products.findById(userId);
+    res.send({ status: "success", product_dataId });
+  } catch (error) {
+    res.send({ status: "error", msg: "error finding the product", error });
+  }
+});
 
 app.get("/product/list/:limit/:offset", async (req, res) => {
   let { limit, offset } = req.params;
@@ -121,7 +151,7 @@ app.get("/product/list/:limit/:offset", async (req, res) => {
   });
 });
 
-app.post("/product/create", async (req, res) => {});
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

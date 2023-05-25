@@ -1,3 +1,5 @@
+
+// signin
 async function onClickLogin() {
   const email = document.getElementById("login-email").value;
   const password = document.getElementById("login-password").value;
@@ -8,18 +10,58 @@ async function onClickLogin() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  }).then((response) => response.json());
+  })
+  // .then((response) => response.json());
+  const jsonResponse = await response.json();
 
-  if (response?.status) {
+  if (jsonResponse?.status) {
     window.location = "/index.html";
   } else {
-    const errorMessage = response?.message;
+    const errorMessage = jsonResponse?.message;
     const errorTag = document.getElementById("login-error");
     errorTag.innerText = errorMessage;
     errorTag.style.display = "inline";
   }
 }
 
+
+// signup
+async function onclicksignup() {
+  const firstname = document.getElementById("firstname").value;
+  const lastname = document.getElementById("lastname").value;
+  const email = document.getElementById("signup-email").value;
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  const response = await fetch("/user/sign-up", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ firstname , lastname , email, password  }),
+  });
+  const jsondata = response.json();
+
+  // .then((response) => response.json());
+  if(password !== confirmPassword){
+    const errorMessage = response?.message;
+    const errorTag = document.getElementById("password-error");
+    errorTag.innerText = errorMessage;
+    errorTag.style.display = "inline";
+  }
+
+  if (jsondata?.status) {
+    window.location = "/index.html";
+  } else {
+    const errorMessage = jsondata?.message;
+    const errorTag = document.getElementById("signup-error");
+    errorTag.innerText = errorMessage;
+    errorTag.style.display = "inline";
+  }
+}
+
+
+// products
 async function showProducts() {
   const response = await fetch("/product/list/10/1", {
     method: "GET",
@@ -44,8 +86,8 @@ async function showProducts() {
         `;
     }
 
-    const parentDiv = document.getElementById("cards");
-    parentDiv.innerHTML = htmlTags;
+    // const parentDiv = document.getElementById("cards");
+    // parentDiv.innerHTML = htmlTags;
   }
 }
 
