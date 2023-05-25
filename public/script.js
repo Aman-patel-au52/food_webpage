@@ -91,6 +91,13 @@ async function showProducts() {
   }
 }
 
+// append menu product cards to my orders
+const buy = document.getElementById('buy');
+buy.addEventListener('click' , ()=> {
+  
+})
+
+
 function homeOnLoad() {
   showProducts();
 }
