@@ -8,7 +8,10 @@ const productSchema = new Schema({
   productDescription: String,
   totalItem: Number,
   userId: String,
-  productId: String,
+  productId: {
+    type : String,
+    required : true
+  },
 });
 
 module.exports = mongoose.model("products", productSchema);

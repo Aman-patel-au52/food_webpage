@@ -11,11 +11,9 @@ initDb();
 
 app.use(express.static("public"));
 
-const users = require("./models/users");
-const products = require("./models/products");
-const orders = require("./models/orders");
+const menuorder = require("./routes/menuroutes");
 
-const { hashPassword, comparePassword } = require("./utils");
+app.use('/', menuorder);
 
 app.get("/test", async (req, res) => {
   const data = await users.find({});
