@@ -6,9 +6,6 @@ body {
 /* container */
 
 #container {
-    /* background-image: url("https://res.cloudinary.com/dik0ai1v8/image/upload/v1685006980/pexels-karolina-grabowska-4022107_adbatv.jpg"); */
-    /* background-size: cover; */
-    /* background-repeat: no-repeat; */
     height: 100vh;
     width: 100%;
 }
@@ -44,18 +41,11 @@ body {
 
 .sign-up,.sign-in {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 /* product cards  */
-/* .productcards {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 0 8vw 0 8vw;
-  position: absolute;
-  top: 15vh;
-} */
+
 
 .productcards {
     display: grid;
