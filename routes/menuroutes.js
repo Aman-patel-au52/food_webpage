@@ -1,9 +1,17 @@
 const { Router } = require("express");
 
-const {   login , signup , ordercreate , orderId , orderlist , productcreate , productId , productlist } = require('../controllers/menu');
+const {
+  login,
+  signup,
+  ordercreate,
+  orderId,
+  orderlist,
+  productcreate,
+  productId,
+  productlist,
+} = require("../controllers/menu");
 
 const menuorder = Router();
-
 
 // Users APIs
 menuorder.post("/user/login", login);
@@ -15,13 +23,12 @@ menuorder.post("/order/create", ordercreate);
 
 menuorder.get("/order/:id", orderId);
 
-menuorder.get("/order/list/:limit/:offset", orderlist);
-
+menuorder.get("/order/list/:userId/:limit/:offset", orderlist);
 
 // Products APIs
 menuorder.post("/product/create", productcreate);
 
-menuorder.get("/product/:id", productId);
+menuorder.get("/product/:productId", productId);
 
 menuorder.get("/product/list/:limit/:offset", productlist);
 

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="Signup.css">
     <script src="script.js" defer></script>
 </head>
-<body>
+<body onload="homeOnLoad()">
     <div id="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
@@ -32,10 +32,27 @@
                     About Us
                 </a>
             </div>
-              <div>
-                  <button type="button" class="btn btn-success btn-m" id="sign-up"><a href="#" class="sign-up">Sign-up</a></button>
-                  <button type="button" class="btn btn-light btn-m" id="sign-in"><a href="./Signin.html" class="sign-in">Sign-in</a> </button>
-                </div>
+            <div id="user-section">
+              <button
+                type="button"
+                class="btn btn-outline-success"
+                id="sign-up"
+              >
+                <a href="./signup.html" class="sign-up">Sign-up</a>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-success"
+                id="sign-in"
+              >
+                <a href="./signin.html" class="sign-in">Sign-in</a>
+              </button>
+            </div>
+            <div id="user-section-logout" style="display: none">
+              <button type="button" class="btn btn-outline-success" id="logout"  style="background: black;">
+                <a onclick="logout()" class="sign-up">logout</a>
+              </button>
+            </div>
             </div>
         <div id="login-container">
           <p id="signup-error" style="color: red; display: none;" class="header"></p>

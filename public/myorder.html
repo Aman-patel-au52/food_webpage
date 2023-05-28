@@ -11,7 +11,7 @@
     <script src="index.js" defer></script>
     <script src="script.js" defer></script>
 </head>
-<body>
+<body onload="homeLoadMyOrder()">
     <div id="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
@@ -23,32 +23,49 @@
                 <a href="./index.html" class="me-4" id="home">
                     Home
                 </a>
-                <a href="#" class="me-4" id="place-orders">
+                <a href="./menu.html"  class="me-4" id="place-orders">
                     Menu
                 </a>
-                <a href="#" class="me-4" id="your-orders">
+                <a href="./myorder.html" class="me-4" id="your-orders">
                     My Orders
-                </a>
+                  </a>
                 <a href="#" class="me-4" id="about-us">
                     About Us
                 </a>
             </div>
-              <div>
-                  <button type="button" class="btn btn-success btn-m" id="sign-up"><a href="./Signup.html" class="sign-up">Sign-up</a></button>
-                  <button type="button" class="btn btn-success btn-m" id="sign-in"><a href="./Signin.html" class="sign-in">Sign-in</a> </button>
-                </div>
+            <div id="user-section">
+                <button
+                  type="button"
+                  class="btn btn-outline-success"
+                  id="sign-up"
+                >
+                  <a href="./signup.html" class="sign-up">Sign-up</a>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-success"
+                  id="sign-in"
+                >
+                  <a href="./signin.html" class="sign-in">Sign-in</a>
+                </button>
+              </div>
+              <div id="user-section-logout" style="display: none">
+                <button type="button" class="btn btn-outline-success" id="logout"  style="background: black;">
+                  <a onclick="logout()" class="sign-up">logout</a>
+                </button>
+              </div>
             </div>
 
         <!-- list  -->
-        <div id="list">
-            <div id="list_title">
+        <div id="my-orders" class="list-myorder">
+            <!-- <div id="list_title">
                 <h2>Name</h2>
                 <h2>Quantity</h2>
                 <h2>Price</h2>
             </div>
 
             <!-- list details  -->
-            <div class="list_details">
+            <!-- <div class="list_details">
                 <h2> Chicken biryani</h2>
                 <h2>2</h2>
                 <h2>300</h2>
@@ -62,7 +79,7 @@
                 <h2>Daal</h2>
                 <h2>1</h2>
                 <h2>80</h2>
-            </div>
+            </div> -->
         </div>
         
     </div>
