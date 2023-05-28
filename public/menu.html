@@ -11,7 +11,7 @@
     <script src="index.js" defer></script>
     <script src="script.js" defer></script>
 </head>
-<body>
+<body onload="homeOnLoad()">
     <div id="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
@@ -23,25 +23,42 @@
                 <a href="./index.html" class="me-4" id="home">
                     Home
                 </a>
-                <a href="#" class="me-4" id="place-orders">
+                <a href="./menu.html"  class="me-4" id="place-orders">
                     Menu
                 </a>
-                <a href="#" class="me-4" id="your-orders">
+                <a href="./myorder.html" class="me-4" id="your-orders">
                     My Orders
-                </a>
+                  </a>
                 <a href="#" class="me-4" id="about-us">
                     About Us
                 </a>
             </div>
-              <div>
-                  <button type="button" class="btn btn-success btn-m" id="sign-up"><a href="./Signup.html" class="sign-up">Sign-up</a></button>
-                  <button type="button" class="btn btn-success btn-m" id="sign-in"><a href="./Signin.html" class="sign-in">Sign-in</a> </button>
-                </div>
+            <div id="user-section">
+                <button
+                  type="button"
+                  class="btn btn-outline-success"
+                  id="sign-up"
+                >
+                  <a href="./signup.html" class="sign-up">Sign-up</a>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-success"
+                  id="sign-in"
+                >
+                  <a href="./signin.html" class="sign-in">Sign-in</a>
+                </button>
+              </div>
+              <div id="user-section-logout" style="display: none">
+                <button type="button" class="btn btn-outline-success" id="logout" style="background: black;">
+                  <a onclick="logout()" class="sign-up">logout</a>
+                </button>
+              </div>
             </div>
 
             <!-- product cards  -->
-            <div class="productcards">
-                <div class="card" style="width: 18rem;">
+            <div class="productcards" id="menu-cards">
+                <!-- <div class="card" style="width: 18rem;">
                     <img src="https://res.cloudinary.com/dik0ai1v8/image/upload/v1684317267/Default-velocity-cuisine-images/first-slide-1_efiueq.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">24*7 Delivery</h5>
@@ -120,7 +137,7 @@
                         <p class="card-text">We Delivers convenient and reliable food services that operates around the clock.</p>
                         <a href="#" class="btn btn-success" id="buy">Buy</a>
                     </div>
-                </div>
+                </div> -->
             </div>
     </div>
 

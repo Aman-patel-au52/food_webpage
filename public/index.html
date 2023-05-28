@@ -1,113 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="index.js" defer></script>
     <script src="script.js" defer></script>
-</head>
-<body onload="homeOnLoad()">
+  </head>
+  <body onload="homeOnLoad()">
     <div id="container">
-
-        <!-- main-page  -->
-        <div id="main-page">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="https://res.cloudinary.com/dik0ai1v8/image/upload/v1684317266/Default-velocity-cuisine-images/resturant_pqxivm.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                        Velocity Cuisine
-                </a>
-                <div>
-                    <a href="#" class="me-4" id="home">
-                        Home
-                    </a>
-                    <a href="./menu.html" class="me-4" id="place-orders">
-                        Menu
-                    </a>
-                    <a href="./myorder.html" class="me-4" id="your-orders">
-                        My Orders
-                    </a>
-                    <a href="#" class="me-4" id="about-us">
-                        About Us
-                    </a>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-outline-success" id="sign-up"><a href="./signup.html" class="sign-up">Sign-up</a></button>
-                    <button type="button" class="btn btn-outline-success" id="sign-in"><a href="./signin.html" class="sign-in">Sign-in</a> </button>
-                </div>
+      <!-- main-page  -->
+      <div id="main-page">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img
+                src="https://res.cloudinary.com/dik0ai1v8/image/upload/v1684317266/Default-velocity-cuisine-images/resturant_pqxivm.png"
+                alt="Logo"
+                width="30"
+                height="24"
+                class="d-inline-block align-text-top"
+              />
+              Velocity Cuisine
+            </a>
+            <div>
+              <a href="#" class="me-4" id="home"> Home </a>
+              <a href="./menu.html" class="me-4" id="place-orders"> Menu </a>
+              <a href="./myorder.html" class="me-4" id="your-orders">
+                My Orders
+              </a>
+              <a href="#" class="me-4" id="about-us"> About Us </a>
             </div>
+            <div id="user-section">
+              <button
+                type="button"
+                class="btn btn-outline-success"
+                id="sign-up"
+              >
+                <a href="./signup.html" class="sign-up">Sign-up</a>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-success"
+                id="sign-in"
+              >
+                <a href="./signin.html" class="sign-in">Sign-in</a>
+              </button>
+            </div>
+            <div id="user-section-logout" style="display: none">
+              <button type="button" class="btn btn-outline-success" id="logout">
+                <a onclick="logout()" class="sign-up">logout</a>
+              </button>
+            </div>
+          </div>
         </nav>
         <div class="company-moto">
-            <h1 class="title-moto"> fast , fresh & delivered to you</h1>
-            <p class="description-moto"> Introducing <span class="velocity-cuisine">velocity cuisine</span>, your go-to food delivery service. We specialize in bringing you fast, fresh, and flavorful meals right to your doorstep. With a wide selection of partner restaurants and a dedicated team of delivery professionals, we ensure that your dining experience is convenient, hassle-free, and delicious. From comfort food to exotic cuisines, our menu has something to satisfy every craving. Simply place your order, sit back, and let us handle the rest. Get ready to indulge in mouthwatering meals without stepping foot outside. With <span class="velocity-cuisine">velocity cuisine</span>, your perfect meal is just a few taps away.</p>
-             <a href="./add_rest.html" class="add-rest-button"> Add restaurants</a>
+          <h1 class="title-moto">fast , fresh & delivered to you</h1>
+          <p class="description-moto">
+            Introducing <span class="velocity-cuisine">velocity cuisine</span>,
+            your go-to food delivery service. We specialize in bringing you
+            fast, fresh, and flavorful meals right to your doorstep. With a wide
+            selection of partner restaurants and a dedicated team of delivery
+            professionals, we ensure that your dining experience is convenient,
+            hassle-free, and delicious. From comfort food to exotic cuisines,
+            our menu has something to satisfy every craving. Simply place your
+            order, sit back, and let us handle the rest. Get ready to indulge in
+            mouthwatering meals without stepping foot outside. With
+            <span class="velocity-cuisine">velocity cuisine</span>, your perfect
+            meal is just a few taps away.
+          </p>
+          <a href="./add_rest.html" class="add-rest-button"> Add restaurants</a>
         </div>
-    </div>
-  
-    <!-- cards  -->
-    <div class="cards" id="cards">
-        <div class="card" style="width: 18rem;">
-            <img src="https://res.cloudinary.com/dik0ai1v8/image/upload/v1684317267/Default-velocity-cuisine-images/first-slide-1_efiueq.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">24*7 Delivery</h5>
-                <p class="card-text">We Delivers convenient and reliable food services that operates around the clock.</p>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="https://res.cloudinary.com/dik0ai1v8/image/upload/v1684317274/Default-velocity-cuisine-images/Second-slide-2_iemhfd.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Lighting Fast Delivery</h5>
-                <p class="card-text">Experience Velocity Cuisine superfast delivery for food delivered fresh & on time</p>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="https://res.cloudinary.com/dik0ai1v8/image/upload/v1684317270/Default-velocity-cuisine-images/third-slide-3_kijmg5.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">No Mininum Orders</h5>
-                <p class="card-text">Order in for yourself or for the group, with no restrictions on order value</p>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="https://res.cloudinary.com/dik0ai1v8/image/upload/v1684317266/Default-velocity-cuisine-images/fourth-slide-4_apbxan.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Live Order Tracking</h5>
-                <p class="card-text">Know where your order is at all times, from the restaurant to your doorstep</p>
-            </div>
-        </div>
-    </div>
+      </div>
 
-    <!-- footer  -->
-    <div id="footer">
+      <!-- cards  -->
+      <div class="cards" id="cards">
+        <div class="card" style="width: 18rem">
+          <img
+            src="https://res.cloudinary.com/dik0ai1v8/image/upload/v1684317267/Default-velocity-cuisine-images/first-slide-1_efiueq.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">24*7 Delivery</h5>
+            <p class="card-text">
+              We Delivers convenient and reliable food services that operates
+              around the clock.
+            </p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <img
+            src="https://res.cloudinary.com/dik0ai1v8/image/upload/v1684317274/Default-velocity-cuisine-images/Second-slide-2_iemhfd.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Lighting Fast Delivery</h5>
+            <p class="card-text">
+              Experience Velocity Cuisine superfast delivery for food delivered
+              fresh & on time
+            </p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <img
+            src="https://res.cloudinary.com/dik0ai1v8/image/upload/v1684317270/Default-velocity-cuisine-images/third-slide-3_kijmg5.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">No Mininum Orders</h5>
+            <p class="card-text">
+              Order in for yourself or for the group, with no restrictions on
+              order value
+            </p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <img
+            src="https://res.cloudinary.com/dik0ai1v8/image/upload/v1684317266/Default-velocity-cuisine-images/fourth-slide-4_apbxan.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Live Order Tracking</h5>
+            <p class="card-text">
+              Know where your order is at all times, from the restaurant to your
+              doorstep
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer  -->
+      <div id="footer">
         <div class="footer-image">
-            <img src="https://res.cloudinary.com/dik0ai1v8/image/upload/v1684317266/Default-velocity-cuisine-images/resturant_pqxivm.png" alt="Logo" width="40" height="35">
-            <h2 class="footer-logo">Velocity Cuisine</h2>
+          <img
+            src="https://res.cloudinary.com/dik0ai1v8/image/upload/v1684317266/Default-velocity-cuisine-images/resturant_pqxivm.png"
+            alt="Logo"
+            width="40"
+            height="35"
+          />
+          <h2 class="footer-logo">Velocity Cuisine</h2>
         </div>
         <div class="footer-desc">
-            <div class="company">
-                <h2 class="company-title">Company</h2>
-                <ul><a class="footer-a-tag" href="#">About us</a> </ul>
-                <ul><a class="footer-a-tag" href="#">Careers</a></ul>
-                <ul><a class="footer-a-tag" href="#">Contact Us</a></ul>
-                <ul><a class="footer-a-tag" href="#">Terms and conditions</a></ul>
-                <ul><a class="footer-a-tag" href="#">Privacy policy</a></ul>
-                <ul><a class="footer-a-tag" href="#">Copyright policy</a></ul>
-            </div>
-            <div class="categories">
-                <h2 class="categories-title">Categories</h2>
-                <ul><a class="footer-a-tag" href="#">Get help</a> </ul>
-                <ul><a class="footer-a-tag" href="#">Promotions</a></ul>
-                <ul><a class="footer-a-tag" href="#">Add you restaurants</a></ul>
-                <ul><a class="footer-a-tag" href="#">Buy gift cards</a></ul>
-                <ul><a class="footer-a-tag" href="#">Pricing</a></ul>
-                <ul><a class="footer-a-tag" href="#">Restaurants near me</a></ul>
-            </div>
+          <div class="company">
+            <h2 class="company-title">Company</h2>
+            <ul>
+              <a class="footer-a-tag" href="#">About us</a>
+            </ul>
+            <ul>
+              <a class="footer-a-tag" href="#">Careers</a>
+            </ul>
+            <ul>
+              <a class="footer-a-tag" href="#">Contact Us</a>
+            </ul>
+            <ul>
+              <a class="footer-a-tag" href="#">Terms and conditions</a>
+            </ul>
+            <ul>
+              <a class="footer-a-tag" href="#">Privacy policy</a>
+            </ul>
+            <ul>
+              <a class="footer-a-tag" href="#">Copyright policy</a>
+            </ul>
+          </div>
+          <div class="categories">
+            <h2 class="categories-title">Categories</h2>
+            <ul>
+              <a class="footer-a-tag" href="#">Get help</a>
+            </ul>
+            <ul>
+              <a class="footer-a-tag" href="#">Promotions</a>
+            </ul>
+            <ul>
+              <a class="footer-a-tag" href="#">Add you restaurants</a>
+            </ul>
+            <ul>
+              <a class="footer-a-tag" href="#">Buy gift cards</a>
+            </ul>
+            <ul>
+              <a class="footer-a-tag" href="#">Pricing</a>
+            </ul>
+            <ul>
+              <a class="footer-a-tag" href="#">Restaurants near me</a>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
-    </div>
-</body>
+  </body>
 </html>
