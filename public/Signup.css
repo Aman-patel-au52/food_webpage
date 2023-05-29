@@ -44,7 +44,8 @@ body {
 
 .sign-up,.sign-in {
     text-decoration: none;
-    color: black;
+    color: white;
+    font-weight: 600;
 }
 
 
