@@ -45,7 +45,8 @@ body {
 .sign-up,
 .sign-in {
   text-decoration: none;
-  color: white;
+  color: red;
+  font-weight: 600;
 }
 
 /* list  */
